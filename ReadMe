@@ -17,9 +17,11 @@ command : npm run test
 
 
 Docker:
-Build the image
+Build the image:
 docker build -t my-horoscope-app .
 
+Run the container:
+docker run -p 8080:8080 -d my-horoscope-app
 
 
 
