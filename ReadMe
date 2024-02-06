@@ -1,0 +1,48 @@
+Horoscope express app
+
+This is a Node.js project to bundle the horoscope library into a express app.
+
+This app provide 2 endpoint:
+    /sign with 2 parameters day and month
+    /signByDate with a date in parameter
+
+
+Local install project dependencie based on package.json:
+npm install
+
+
+Unit Test
+command : npm run test
+
+
+
+Docker:
+Build the image
+docker build -t my-horoscope-app .
+
+
+
+
+Example of request:
+
+http://localhost:8080/sign?day=4&month=12
+-> The zodiac sign for 4/12 is Sagittarius
+
+
+http://localhost:8080/signByDate?date=04-08-1988
+-> The zodiac sign for 8/4 is Aries
+
+
+The app check the validity of the query parameters.
+
+http://localhost:8080/signByDate?date=04-08-foo
+-> Invalid date
+
+http://localhost:8080/sign?day=five&month=12
+-> day must be a number
+
+http://localhost:8080/sign?day=five&month=13
+-> Month must be in the range of 1 to 12
+
+
+
